@@ -22,12 +22,34 @@ function App() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!email.trim()) {
+      setError("Email is required");
+      return;
+    }
+
+    if (!password.trim()) {
+      setError("Password is required");
+      return;
+    }
+
     console.log("Login");
     console.log("Email: " + email);
     console.log("Password: " + password);
+
+    if (
+      data.find((item) => item.email == email.toLowerCase()) &&
+      data.find((item) => item.password == password.toLowerCase())
+    ) {
+      setSuccess("You Logged in Successfully ...");
+    }
+
+    setError("");
+    setEmail("");
+    setPassword("");
   };
 
   return (
@@ -64,6 +86,7 @@ function App() {
             Login
           </button>
         </form>
+        {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
       </div>
     </div>
   );
