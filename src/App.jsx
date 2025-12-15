@@ -2,23 +2,12 @@ import { useState } from "react";
 
 function App() {
   const data = [
-    {
-      email: "test1@gmail.com",
-      password: "12345",
-    },
-    {
-      email: "test2@gmail.com",
-      password: "12345",
-    },
-    {
-      email: "test3@gmail.com",
-      password: "12345",
-    },
-    {
-      email: "test4@gmail.com",
-      password: "12345",
-    },
+    { email: "test1@gmail.com", password: "12345" },
+    { email: "test2@gmail.com", password: "12345" },
+    { email: "test3@gmail.com", password: "12345" },
+    { email: "test4@gmail.com", password: "12345" },
   ];
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -26,6 +15,12 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // reset messages
+    setError("");
+    setSuccess("");
+
+    // validations
     if (!email.trim()) {
       setError("Email is required");
       return;
@@ -36,20 +31,20 @@ function App() {
       return;
     }
 
-    console.log("Login");
-    console.log("Email: " + email);
-    console.log("Password: " + password);
+    // check user
+    const user = data.find(
+      (item) =>
+        item.email.toLowerCase() === email.toLowerCase() &&
+        item.password === password
+    );
 
-    if (
-      data.find((item) => item.email == email.toLowerCase()) &&
-      data.find((item) => item.password == password.toLowerCase())
-    ) {
+    if (user) {
       setSuccess("You Logged in Successfully ...");
+      setEmail("");
+      setPassword("");
+    } else {
+      setError("Invalid email or password");
     }
-
-    setError("");
-    setEmail("");
-    setPassword("");
   };
 
   return (
@@ -61,32 +56,44 @@ function App() {
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <input
-            placeholder="Username..."
+            type="email"
+            placeholder="Email..."
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => {
+              setEmail(e.target.value);
+              setError("");
+              setSuccess("");
+            }}
             className="px-4 py-3 rounded-xl border border-gray-300
-                   focus:outline-none focus:ring-2 focus:ring-blue-500
-                   focus:border-blue-500 transition"
+                       focus:outline-none focus:ring-2 focus:ring-blue-500
+                       focus:border-blue-500 transition"
           />
 
           <input
+            type="password"
             placeholder="Password..."
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => {
+              setPassword(e.target.value);
+              setError("");
+              setSuccess("");
+            }}
             className="px-4 py-3 rounded-xl border border-gray-300
-                   focus:outline-none focus:ring-2 focus:ring-blue-500
-                   focus:border-blue-500 transition"
+                       focus:outline-none focus:ring-2 focus:ring-blue-500
+                       focus:border-blue-500 transition"
           />
 
           <button
             type="submit"
             className="mt-2 py-3 rounded-xl bg-blue-600 text-white font-semibold
-                   hover:bg-blue-700 active:scale-95 transition-all"
+                       hover:bg-blue-700 active:scale-95 transition-all"
           >
             Login
           </button>
         </form>
-        {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+
+        {error && <p className="text-red-500 text-sm mt-3">{error}</p>}
+        {success && <p className="text-green-600 text-sm mt-3">{success}</p>}
       </div>
     </div>
   );
