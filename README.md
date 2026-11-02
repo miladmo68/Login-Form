@@ -1,58 +1,61 @@
-# 🔐 Login Form — React
+<div align="center">
 
-A clean and simple **Login Form built with React**, focusing on basic form handling, validation logic, and clean UI.  
-This project is part of my **front-end practice and interview preparation**.
+# 🔐 Login Form
 
----
+A clean login form built with React, focusing on controlled inputs and validation.
+
+<a href="https://miladmo68.github.io/Login-Form/"><img src="https://img.shields.io/badge/Live_Demo-Open_Site-FF6A00?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Live Demo"></a>
+<a href="https://github.com/miladmo68/Login-Form"><img src="https://img.shields.io/badge/Source-GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="Source code"></a>
+<a href="https://miladweb.com"><img src="https://img.shields.io/badge/Portfolio-miladweb.com-1E3A8A?style=for-the-badge&logo=aboutdotme&logoColor=white" alt="Portfolio"></a>
+
+**🔗 Live:** [miladmo68.github.io/Login-Form](https://miladmo68.github.io/Login-Form/)
+
+</div>
+
+<p align="center">
+  <img src="./.github/preview.jpg" alt="Login Form screenshot" width="100%" />
+</p>
 
 ## ✨ Features
 
-✅ Controlled form inputs  
-✅ Basic form validation  
-✅ Error & success handling  
-✅ Clean and readable logic  
-✅ Responsive UI  
-✅ Styled with Tailwind CSS  
+- Controlled email and password inputs
+- Client-side validation and error messages
+- Minimal Tailwind CSS design
 
----
+## 🛠️ Tech Stack
 
-## 🧠 Concepts Covered
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white) ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white) ![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-222222?style=for-the-badge&logo=githubpages&logoColor=white)
 
-- ⚛️ React Functional Components  
-- 🎯 `useState` for form state management  
-- 📝 Controlled inputs  
-- ❗ Basic validation logic  
-- 🧩 Component-based structure  
-- 🎨 Tailwind CSS styling  
+## 🚀 Getting Started
 
----
+**Prerequisites:** [Node.js](https://nodejs.org/) 18 or newer
 
-## 🖥️ UI Overview
+**Install and run**
 
-- Email input
-- Password input
-- Submit button
-- Error message handling
-- Success feedback
-
----
-
-## 🔄 Logic Flow
-
-1. User enters email and password  
-2. Inputs are stored in component state  
-3. Validation checks are applied  
-4. Error or success message is displayed  
-
----
-
-## 🧪 Validation Rules (Example)
-
-- Email is required  
-- Password is required  
-- Displays friendly error messages  
-
----
+```bash
+git clone https://github.com/miladmo68/Login-Form.git
+cd Login-Form
+npm install
+npm run dev
+```
 
 ## 📁 Project Structure
 
+```
+Login-Form/
+├── src/
+├── eslint.config.js
+├── index.html
+├── package.json
+└── vite.config.js
+```
+
+## 👤 Author
+
+**Milad Mohammadi** — Frontend-Focused Full-Stack Developer, Toronto 🇨🇦
+
+[![Website](https://img.shields.io/badge/Website-miladweb.com-FF6A00?style=flat-square&logo=googlechrome&logoColor=white)](https://miladweb.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-miladmo68-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/miladmo68/)
+[![GitHub](https://img.shields.io/badge/GitHub-miladmo68-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/miladmo68)
+
+<p align="center"><sub>If you like this project, consider giving it a ⭐</sub></p>
